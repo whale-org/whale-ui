@@ -1,6 +1,6 @@
 {
   "name": "bluewhale-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -9,10 +9,9 @@
   "scripts": {
     "build-js": "tsc -p .",
     "prepare": "npm run build",
-    "start": "npm run build -- -w",
-    "build": "npm run build-js && npm run build-sass-to-css && npm run copy-css-to-lib",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject",
+    "watch-js": "npm run build-js -- -w",
+    "build": "npm run build-js && npm run build-sass-to-css",
+    "build:dev": "npm-run-all -p watch-js watch-sass-to-css",
     "styleguide": "npm-run-all -p watch-sass-to-css styleguidist",
     "styleguidist": "styleguidist server",
     "styleguide-build": "styleguidist build",
@@ -20,8 +19,8 @@
     "copy-css-to-lib": "npm-run-all -s copy-base-css copy-component-css",
     "copy-base-css": "cpx \"./src/**/*.css\" ./lib/",
     "copy-component-css": "cpx \"./src/components/**/*.css\" ./lib/components",
-    "build-sass-to-css": "node-sass-chokidar src/ -o src/",
-    "watch-sass-to-css": "node-sass-chokidar src/ -o src/ --watch --recursive"
+    "build-sass-to-css": "node-sass-chokidar src/ -o lib/",
+    "watch-sass-to-css": "node-sass-chokidar src/ -o lib/ --watch --recursive"
   },
   "main": "lib",
   "types": "lib",
