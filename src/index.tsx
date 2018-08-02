@@ -6,3 +6,4 @@ export { Modal } from "./Modal";
 export { Table } from "./Table";
 export { default as TransitionComponent } from "./TransitionComponent";
 export { Portal } from "./Core/Portal";
+export { Select } from "./Select";
