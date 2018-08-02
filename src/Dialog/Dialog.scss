@@ -1,0 +1,76 @@
+.hn-dialog {
+  width: 500px;
+  min-height: 300px;
+  border-radius: 6px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0, 0.95, 0.4, 1.01);
+  will-change: auto;
+
+  &-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 37px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    color: #2c80ff;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 111;
+    user-select: none;
+  }
+
+  &-header {
+    font: 18px/30px "Segoe UI", "Microsoft Yahei", sans-serif;
+    color: #333333;
+    user-select: none;
+    cursor: default;
+  }
+
+  &-body {
+    padding: 20px 0;
+  }
+
+  &-footer {
+    position: absolute;
+    bottom: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    left: 0;
+    padding: 0 20px;
+    display: flex;
+    &.center {
+      justify-content: center;
+    }
+    .hn-btn {
+      margin-right: 12px;
+    }
+  }
+
+  /*react-css-transition*/
+  &-entering {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &-entered {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.15s cubic-bezier(0, 0.95, 0.4, 1.01);
+  }
+
+  &-exiting {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  &-exited {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s cubic-bezier(0, 0.95, 0.4, 1.01);
+  }
+}

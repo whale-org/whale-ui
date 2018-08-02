@@ -1,6 +1,39 @@
-.whale-button {
-  padding: 8px 10px;
-  background-color: white;
-  border-radius: 3px;
-  border: 1px solid #6399ff;
+@import '../assets/styles/variables.scss';
+
+.hn-btn {
+	display: inline-block;
+	box-sizing: border-box;
+	line-height: 28px;
+	font-size: 14px;
+	text-align: center;	
+	color: $primary-color;
+	border: none;
+	padding: 0 10px;
+	min-width: 30px;
+	transition: border-color .15s, background-color .15s;
+	outline: 0 none;
+	cursor: pointer;
+	border-radius: 4px;
+	background: none;
+
+	&.primary {
+		background-color: $primary-color;
+		color: white;
+		&:hover {
+			background-color: $hover-color;
+		}
+	}
+
+    &.large {
+      padding: 0 30px;
+      font-size: 20px;
+      line-height: 50px;
+    }
+
+    &.border {
+      border: 2px solid #2c80ff;
+    }
+
+
+
 }

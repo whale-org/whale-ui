@@ -1,0 +1,39 @@
+body.hn-body-relative {
+  position: relative;
+  overflow: hidden;
+}
+
+.hn-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(25,28,34,.88);
+  overflow: auto;
+  transition: all 0.3s cubic-bezier(0, 0.95, 0.4, 1.01);
+
+  &.hn-modal-entering {
+    background-color: rgba(25,28,34,.88);
+  }
+
+  &.hn-modal-entered {
+    background-color: rgba(25,28,34,.88);
+    transition: all 0.15s cubic-bezier(0, 0.95, 0.4, 1.01);
+  }
+
+  &.hn-modal-exiting {
+    background-color: rgba(25, 28, 34, 0);
+  }
+
+  &.hn-modal-exited {
+    background-color: rgba(25, 28, 34, 0);
+    transition: all 0.3s cubic-bezier(0, 0.95, 0.4, 1.01);
+  }
+
+  .hn-dialog {
+    margin: 0 auto;
+    position: relative;
+    margin-top: 200px;
+  }
+}

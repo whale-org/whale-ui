@@ -3,39 +3,53 @@ import * as React from "react";
 import "./Button.css";
 
 export interface IButtonProps {
-  danger?: boolean;
   disabled?: boolean;
+  large?: boolean;
+  small?: boolean;
   primary?: boolean;
-  size?: "small" | "default" | "large";
-  warn?: boolean;
+  border?: boolean;
+  danger?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
-export default class Button extends React.Component<IButtonProps, {}> {
+export class Button extends React.Component<IButtonProps, any> {
 
   public static defaultProps: IButtonProps = {
+    border: false,
     danger: false,
     disabled: false,
+    large: false,
     primary: false,
-    size: "default",
-    warn: false,
+    small: false,
   };
 
   public render() {
-    const { danger, disabled, primary, size, warn} = this.props;
-    const buttonClasses = classNames(
-      "whale-button",
+    const {
+      children,
+      disabled,
+      danger,
+      large,
+      small,
+      primary,
+      border,
+      onClick,
+    } = this.props;
+    const classes = classNames(
+      "hn-btn",
       {
-        ["small"]: size === "small",
-        ["large"]: size === "large",
-        ["disabled"]: disabled,
-        ["primary"]: primary,
-        ["warn"]: warn,
-        ["danger"]: danger,
+        border,
+        danger,
+        disabled,
+        large,
+        primary,
+        small,
       },
     );
     return (
-      <button className={buttonClasses}>
-        {this.props.children}
+      <button
+        onClick={onClick}
+        className={classes}>
+        {children}
       </button>
     );
   }

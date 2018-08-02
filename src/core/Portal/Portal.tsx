@@ -10,7 +10,7 @@ export interface IPortalState {
   hasMounted: boolean;
 }
 
-export default class Portal extends React.Component<IPortalProps, IPortalState> {
+export class Portal extends React.Component<IPortalProps, IPortalState> {
 
   public state: IPortalState = { hasMounted: false };
 
